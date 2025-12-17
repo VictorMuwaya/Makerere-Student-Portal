@@ -1,57 +1,36 @@
 # Student Portal - Makerere University
 
-This is a modern, high-performance student dashboard designed specifically for the students of Makerere University. It provides a centralized gateway to manage academic life, from tracking CGPA trends to course registration and schedule management.
+A modern, high-performance student dashboard designed specifically for the students of Makerere University.
 
-## 🎓 Overview
+## 🚀 Deployment to Cloudflare Pages
 
-Built with a focus on aesthetics and usability, this portal embodies the Makerere motto, *"We Build for the Future"*. The interface utilizes a "floating island" design philosophy, featuring glassmorphism effects and a responsive layout that works seamlessly across mobile, tablet, and desktop devices.
+The project is configured for **Cloudflare Pages**. 
 
-## ✨ Key Features
+### CI/CD Configuration
+If you are using the Cloudflare Pages Dashboard for automatic deployments:
+1. **Build command**: `npm run build`
+2. **Build output directory**: `dist`
+3. **Root directory**: `/` (Leave as default)
 
-- **Dynamic Dashboard**: View real-time statistics including current CGPA, total credit units (CU), and pending assignments.
-- **CGPA Visualizer**: Interactive charts powered by Recharts to track academic performance across semesters on the Ugandan 5.0 scale.
-- **Academic Course Management**: Browse, search, and register for course units with a streamlined registration workflow.
-- **Smart Timetable**: A day-by-day breakdown of lecture schedules and locations across the Main Campus.
-- **Floating Command Center**: A sticky, elevated header providing quick access to global search, notifications, and profile management that stays accessible as you scroll.
-- **Notification Center**: Real-time alerts for academic results, financial deadlines, and campus events.
+### Manual Deployment via CLI
+If you prefer deploying from your terminal, ensure you use the `pages` subcommand:
 
-## 🛠️ Technology Stack
+```bash
+# 1. Build the project
+npm run build
 
-- **React 19**: Modern UI component architecture.
-- **Tailwind CSS**: Utility-first styling for a clean, professional aesthetic.
-- **Recharts**: Data visualization for academic performance.
-- **FontAwesome**: High-quality iconography.
-- **Cloudflare Pages**: High-speed global hosting.
+# 2. Deploy the 'dist' folder
+npx wrangler pages deploy dist
+```
 
-## 🚀 Getting Started
+**Note**: Do not use `npx wrangler deploy` as it will trigger the Workers deployment flow and fail for this project.
 
-### Local Development
-
-1. Clone the repository.
-2. Ensure you have a modern browser.
-3. Serve the directory using any local web server (e.g., `npx serve .` or Live Server in VS Code).
-4. Access the portal at `http://localhost:3000` (or your local port).
-
-### Deployment
-
-This project is configured for **Cloudflare Pages**. 
-
-**IMPORTANT**: To deploy a Pages project, you must use the `pages` subcommand. 
-
-1. Install the Wrangler CLI: `npm install -g wrangler`
-2. Authenticate: `wrangler login`
-3. **Correct Deploy Command**: `npx wrangler pages deploy .`
-
-*Note: Do not use `npx wrangler deploy` as it is intended for Cloudflare Workers only and will result in an error for this project.*
-
-Refer to the `wrangler.json` file for environment configuration.
-
-## 🎨 Design System
-
-The application uses the official Makerere University color palette:
-- **Primary Red**: `#990000` (Representing the Ivory Tower)
-- **Primary Dark**: `#0f172a` (Slate 900)
-- **Background**: `#f8fafc` (Slate 50)
+## 🛠️ Tech Stack
+- **React 19**
+- **Vite** (Build Tool)
+- **Tailwind CSS**
+- **Recharts**
+- **Cloudflare Pages** (Hosting)
 
 ---
-*Disclaimer: This is a digital portal concept designed to demonstrate modern frontend engineering for higher education institutions.*
+*Disclaimer: This is a digital portal concept designed for Makerere University.*
