@@ -1,0 +1,9 @@
+
+{
+  "name": "makererestudentportal",
+  "pages_build_output_dir": ".",
+  "compatibility_date": "2025-02-01",
+  "vars": {
+    "API_KEY": "YOUR_API_KEY_HERE"
+  }
+}
