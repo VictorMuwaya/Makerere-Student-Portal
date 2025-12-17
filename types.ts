@@ -1,4 +1,3 @@
-
 export interface Course {
   id: string;
   name: string;
@@ -23,11 +22,6 @@ export interface GradePoint {
   semester: string;
   gpa: number;
   courses: { name: string; code: string; grade: string; gp: number; cu: number }[];
-}
-
-export interface Message {
-  role: 'user' | 'model';
-  text: string;
 }
 
 export interface Notification {
