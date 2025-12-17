@@ -34,12 +34,15 @@ Built with a focus on aesthetics and usability, this portal embodies the Makerer
 
 ### Deployment
 
-This project is pre-configured for **Cloudflare Pages**. 
+This project is configured for **Cloudflare Pages**. 
 
-To deploy:
+**IMPORTANT**: To deploy a Pages project, you must use the `pages` subcommand. 
+
 1. Install the Wrangler CLI: `npm install -g wrangler`
 2. Authenticate: `wrangler login`
-3. Deploy: `wrangler pages deploy .`
+3. **Correct Deploy Command**: `npx wrangler pages deploy .`
+
+*Note: Do not use `npx wrangler deploy` as it is intended for Cloudflare Workers only and will result in an error for this project.*
 
 Refer to the `wrangler.json` file for environment configuration.
 
