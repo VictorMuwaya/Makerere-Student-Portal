@@ -4,26 +4,26 @@ A modern, high-performance student dashboard designed specifically for the stude
 
 ## 🚀 Deployment to Cloudflare Pages
 
-The project is configured for **Cloudflare Pages**. 
+The project is specifically a **Cloudflare Pages** project. 
 
-### CI/CD Configuration
-If you are using the Cloudflare Pages Dashboard for automatic deployments:
-1. **Build command**: `npm run build`
-2. **Build output directory**: `dist`
-3. **Root directory**: `/` (Leave as default)
+### ⚠️ Important Deployment Note
+The error `✘ [ERROR] It looks like you've run a Workers-specific command in a Pages project` occurs because `wrangler deploy` is being called instead of `wrangler pages deploy`.
+
+To fix this:
+1. If you are using an automated CI/CD platform (like the one in your logs), locate the **Deployment Command** setting in your project dashboard.
+2. Change the command from `npx wrangler deploy` to:
+   ```bash
+   npx wrangler pages deploy dist
+   ```
 
 ### Manual Deployment via CLI
-If you prefer deploying from your terminal, ensure you use the `pages` subcommand:
-
 ```bash
-# 1. Build the project
+# 1. Build the production assets
 npm run build
 
-# 2. Deploy the 'dist' folder
+# 2. Deploy specifically to Pages
 npx wrangler pages deploy dist
 ```
-
-**Note**: Do not use `npx wrangler deploy` as it will trigger the Workers deployment flow and fail for this project.
 
 ## 🛠️ Tech Stack
 - **React 19**
